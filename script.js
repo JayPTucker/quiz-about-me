@@ -11,6 +11,18 @@ var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
 
+// QUIZ TIMER
+var counter = 60;
+    setInterval(function () {
+        if (counter >= 1) {
+        counter--;
+            document.getElementById('timer').innerHTML = counter;
+        }
+        if (counter === 0) {
+            window.location.href = "file:///C:/Users/jaypt/OneDrive/Documents/University/Coding%20Projects/quiz-about-me/index.html";
+        }
+    }, 1000);
+
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
     questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
@@ -26,19 +38,31 @@ function loadNextQuestion () {
         alert('Please select your answer!');
         return;
     }
-    var answer = selectedOption.nodeValue;
+
+    // SCORE CALCULATOR
+    var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
         score += 10;
+        document.getElementById('timerScore').innerHTML = "<p>Correct!  +10 to the Timer!</p>"
+    } else {
+        score -= 15;
+        document.getElementById('timerScore').innerHTML = "<p>Incorrect!  -15 from the Timer!</p>"
     }
+
+    // TIMER CALCULATOR
+    if(questions[currentQuestion].answer == answer) {
+        counter += 10;
+    } else {
+        counter -= 15;
+    }
+
     selectedOption.checked = false;
     currentQuestion++;
     if(currentQuestion == totQuestions - 1){
         nextButton.textContent = 'Finish';
     }
     if(currentQuestion == totQuestions){
-        container.style.display = 'none';
-        resultCont.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score;
+        document.write('Your score: ' + score)
         return;
     }
     loadQuestion(currentQuestion);
