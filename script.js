@@ -2,26 +2,40 @@ var currentQuestion = 0;
 var score = 0;
 var totQuestions = questions.length;
 
+// MAIN MENU START
+
+// MAIN MENU END
+
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
 var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
+var answers = document.getElementById('answers');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
 
-// QUIZ TIMER
-var counter = 60;
-    setInterval(function () {
-        if (counter >= 1) {
-        counter--;
-            document.getElementById('timer').innerHTML = counter;
+// QUIZ TIMER START
+var sec = 60;
+
+function timer(){
+    var timer = setInterval(function(){
+        
+        document.getElementById('timer').innerText = "Time Left: " + sec;
+        sec--;
+        if (sec < 0) {
+            alert("Time's up!")
+            clearInterval(timer);
         }
-        if (counter === 0) {
-            window.location.href = "file:///C:/Users/jaypt/OneDrive/Documents/University/Coding%20Projects/quiz-about-me/index.html";
+        if(currentQuestion == totQuestions){
+            clearInterval(timer);
         }
-    }, 1000);
+    }, 1000);
+}
+
+timer();
+// QUIZ TIMER END
 
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
@@ -51,9 +65,9 @@ function loadNextQuestion () {
 
     // TIMER CALCULATOR
     if(questions[currentQuestion].answer == answer) {
-        counter += 10;
+        sec += 10;
     } else {
-        counter -= 15;
+        sec -= 15;
     }
 
     selectedOption.checked = false;
@@ -62,7 +76,7 @@ function loadNextQuestion () {
         nextButton.textContent = 'Finish';
     }
     if(currentQuestion == totQuestions){
-        document.write('Your score: ' + score)
+        console.log('Your score: ' + score)
         return;
     }
     loadQuestion(currentQuestion);
