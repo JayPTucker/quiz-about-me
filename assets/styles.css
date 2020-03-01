@@ -10,10 +10,14 @@
 }
 
 /* LOGO DESIGN */
+.logo {
+    margin-bottom: 6px;
+    transition: all .4s ease-in-out;
+}
+
 .logo:hover {
-    height: 100px !important;
-    width: 100px;
-    transition: 0.5s;
+    transform: scale(1.5);
+    transition: 0.4s;
 }
 
 /* TITLE DESIGN */
@@ -32,6 +36,7 @@
     box-shadow: 1px 1px 1px rgb(0, 0, 0);
     padding: 7px;
     margin: 20px;
+    transition: all .2s ease-in-out;
 }
 
 .buttons:hover {
