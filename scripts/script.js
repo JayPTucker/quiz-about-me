@@ -17,7 +17,7 @@ var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
 var timerScore = document.getElementById('timerScore');
 var leaderboard = document.getElementById('leaderboard');
-var title = document.getElementById('title');
+var title = document.getElementById('quizTitle');
 
 const isStorage = 'undefined' !== typeof localStorage
 
@@ -30,8 +30,9 @@ function timer(){
         sec--;
         // 0 SECONDS LEFT ACTIONS:
         if (sec < -1) {
-            alert("Time's up!  Let's Check your Score!");
             clearInterval(timer);
+            alert("Time's up!  Try Again.");
+            window.location.replace("index.html");
         }
 
         // IF ALL QUESTIONS ARE COMPLETED:
@@ -39,6 +40,7 @@ function timer(){
             clearInterval(timer);
             leaderboardScore();
             clearInterval(timer);
+            title.innerText = "Leaderboard"
         }
 
         // LESS THAN 15 SECONDS WARNING:
@@ -54,16 +56,29 @@ function timer(){
 
 timer();
 
-
+// LEADERBOARD FUNCTIONALITY START
 function leaderboardScore() {
-    
+    // Getting the Player's name:
+    var name = prompt("You Finished!  What's your name?");
 
+
+    localStorage.setItem("leaderboard", name + ' ' + JSON.stringify(score));
 
 
     quiz.innerHTML = "";
-    quiz.innerHTML = "<p class='LBScore'>Your Score: " + localStorage.getItem('leaderboard') + "</p>"
+    quiz.innerHTML = "<h1 class='LBScore'>Score:<br> " + localStorage.getItem('leaderboard') + "</h1>";
 
 }
+
+// LEADERBOARD BUTTON
+function loadLeaderboard() {
+    clearInterval(timer);
+    quiz.innerHTML = "";
+    quiz.innerHTML = "<hr><h1 class='LBScore'>Score: " + localStorage.getItem('leaderboard') + "</h1>";
+    clearInterval(timer);
+    title.innerText = "Leaderboard"
+}
+// LEADERBOARD FUNCTIONALITY START
 
 // QUIZ TIMER END
 
@@ -91,7 +106,7 @@ function loadNextQuestion () {
         timerScore.style.color = "lightgreen";
         timerScore.innerHTML = "<p>Correct!  +10 to the Timer!</p>";
     } else {
-        score -= 15;
+        score -= 5;
         sec -= 15;
         timerScore.style.color = "red";
         timerScore.innerHTML = "<p>Incorrect!  -15 from the Timer!</p>";

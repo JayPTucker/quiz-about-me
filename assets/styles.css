@@ -29,8 +29,7 @@ body {
 /* TITLE DESIGN */
 .quizTitle {
     margin-top: 17px;
-    margin-right: 30px;
-    float: right;
+    text-decoration: underline;
 }
 
 .goHomeBtn {
@@ -60,10 +59,6 @@ body {
 
 
 /* BUTTON DESIGN END */
-
-
-
-
 
 /* TIMER DESIGN */
 .timer {
