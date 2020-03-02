@@ -19,6 +19,8 @@ var timerScore = document.getElementById('timerScore');
 var leaderboard = document.getElementById('leaderboard');
 var title = document.getElementById('title');
 
+const isStorage = 'undefined' !== typeof localStorage
+
 // QUIZ TIMER START
 var sec = 60;
 
@@ -54,15 +56,12 @@ timer();
 
 
 function leaderboardScore() {
-    // var leaderboardName = prompt("You finished!  What's your name?");
-    localStorage.setItem("score", score);
-
-    // localStorage.setItem("date", Date());
-    // localStorage.setItem("name", leaderboardName);
+    
 
 
-    // quiz.innerHTML = "";
-    // quiz.innerHTML = "<p class='LBScore'>Your Score: " + localStorage.getItem("score") + "</p>"
+
+    quiz.innerHTML = "";
+    quiz.innerHTML = "<p class='LBScore'>Your Score: " + localStorage.getItem('leaderboard') + "</p>"
 
 }
 
