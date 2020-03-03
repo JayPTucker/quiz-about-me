@@ -1,3 +1,5 @@
+// --- MAIN VARIABLES START ---
+
 var currentQuestion = 0;
 var score = 0;
 var totQuestions = questions.length;
@@ -15,28 +17,31 @@ var timerScore = document.getElementById('timerScore');
 var leaderboard = document.getElementById('leaderboard');
 var title = document.getElementById('quizTitle');
 
-// QUIZ TIMER START
+// --- MAIN VARIABLES END ---
+
+// --- QUIZ TIMER START ---
+
 var sec = 60;
 
 function timer(){
     var timer = setInterval(function(){
         document.getElementById('timer').innerText = "Time Remaining:  " + sec;
         sec--;
-        // 0 SECONDS LEFT ACTIONS:
+        // 0 Seconds left Actions:
         if (sec < -1) {
             clearInterval(timer);
             alert("Time's up!  Try Again.");
             window.location.replace("index.html");
         }
 
-        // IF ALL QUESTIONS ARE COMPLETED:
+        // Once all Questions are Completed:
         if(currentQuestion == totQuestions) {
             clearInterval(timer);
             leaderboardScore();
             title.innerText = "Leaderboard"
         }
 
-        // LESS THAN 15 SECONDS WARNING:
+        // Less than 15 Seconds warning:
 
         if(sec < 15) {
             document.getElementById('timer').style.color = "red";
@@ -48,8 +53,11 @@ function timer(){
 };
 
 timer();
+// --- QUIZ TIMER END ---
 
-// LEADERBOARD FUNCTIONALITY START
+
+// --- LEADERBOARD FUNCTIONALITY START ---
+
 function leaderboardScore() {
     // Getting the Player's name:
     var name = prompt("You Finished!  What's your name?");
@@ -63,7 +71,7 @@ function leaderboardScore() {
 
 };
 
-// LEADERBOARD BUTTON
+    // Leaderboard Button
 function loadLeaderboard() {
     clearInterval(timer);
     quizBox.innerHTML = "";
@@ -72,7 +80,10 @@ function loadLeaderboard() {
     title.innerText = "Leaderboard";
 };
 
-// LEADERBOARD FUNCTIONALITY START
+// --- LEADERBOARD FUNCTIONALITY END ---
+
+
+// --- LOADING THE QUESTIONS START ---
 
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
@@ -90,7 +101,14 @@ function loadNextQuestion () {
         return;
     }
 
-    // SCORE CALCULATOR
+    // Next Question
+    selectedOption.checked = false;
+    currentQuestion++;
+    if(currentQuestion == totQuestions - 1){
+        nextButton.textContent = 'Finish';
+    }
+
+    // Score/Timer Calculator
     var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
         score += 10;
@@ -99,19 +117,14 @@ function loadNextQuestion () {
         timerScore.innerHTML = "<p>Correct!  +10 to the Timer!</p>";
     } else {
         score -= 5;
-        sec -= 15;
+        sec -= 20;
         timerScore.style.color = "red";
         timerScore.innerHTML = "<p>Incorrect!  -15 from the Timer!</p>";
     }
-    
 
-// NEXT QUESTION
-    selectedOption.checked = false;
-    currentQuestion++;
-    if(currentQuestion == totQuestions - 1){
-        nextButton.textContent = 'Finish';
-    }
     loadQuestion(currentQuestion);
+
+// --- LOADING THE QUESTIONS END ---
 }
 
 loadQuestion(currentQuestion);

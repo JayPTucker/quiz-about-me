@@ -22,7 +22,7 @@ This Website will most likely not recieve any Updates in the future unless it is
 7. Have fun! Send me what you did!
 
 ## Usage:
-With this Website you're able to take a Timed Quiz about Myself.  Once you Start the Quiz your timer will start, you have 60 seconds to answer all 5 questions.  You get a Question right, you gain 10 Seconds and 10 Points.  However, if you get a Question wrong you will lose 15 Seconds and 5 Points.  Once you finish the Quiz it will Prompt you asking for your name, once you type in your name and Submit it, you'll be taken to the leaderboard section where you can view your Score at anytime, even after a page refresh.
+With this Website you're able to take a Timed Quiz about Myself.  Once you Start the Quiz your timer will start, you have 60 seconds to answer all 5 questions.  You get a Question right, you gain 10 Seconds and 10 Points.  However, if you get a Question wrong you will lose 20 Seconds and 5 Points.  Once you finish the Quiz it will Prompt you asking for your name, once you type in your name and Submit it, you'll be taken to the leaderboard section where you can view your Score at anytime, even after a page refresh.
 
 ## Credits:
 1. YouTube: [dcode - How to use Local Storage in JavaScript](https://www.youtube.com/watch?v=k8yJCeuP6I8)
