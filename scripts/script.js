@@ -71,9 +71,8 @@ function loadLeaderboard() {
     clearInterval(timer);
     title.innerText = "Leaderboard";
 };
-// LEADERBOARD FUNCTIONALITY START
 
-// QUIZ TIMER END
+// LEADERBOARD FUNCTIONALITY START
 
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
