@@ -2,6 +2,7 @@ body {
     background-color: rgba(0, 0, 0, 0.835) !important;
 }
 
+/* THE DIV IN WHICH THE QUIZ IS STORED IN */
 .quizBox {
     margin-top: 80px;
     padding: 20px;
@@ -15,7 +16,7 @@ body {
     text-shadow: 1px 2px 1px black;
 }
 
-/* LOGO DESIGN */
+/* --- LOGO DESIGN START --- */
 .logo {
     width: 100px;
     height: 100px;
@@ -27,8 +28,9 @@ body {
     transform: scale(1.5);
     transition: 0.4s;
 }
+/* --- LOGO DESIGN END --- */
 
-/* TITLE DESIGN */
+/* --- TITLE DESIGN --- */
 .quizTitle {
     margin-top: 17px;
     text-decoration: underline;
@@ -45,7 +47,7 @@ body {
     font-size: 20px;
 }
 
-/* BUTTON DESIGN START */
+/* --- BUTTON DESIGN START --- */
 .buttons {
     color: white;
     background-color: rgb(57, 144, 226);
@@ -68,11 +70,9 @@ body {
 .buttons:focus {
     outline: none !important;
 }
+/* --- BUTTON DESIGN END --- */
 
-
-/* BUTTON DESIGN END */
-
-/* TIMER DESIGN */
+/* --- TIMER DESIGN START --- */
 .timer {
     background-color: black;
     padding: 5px;
@@ -89,8 +89,10 @@ body {
     font-size: 20px;
     color: gray;
 }
+/* --- TIMER DESIGN END --- */
 
-/* QUESTIONS */
+
+/* --- QUESTIONS --- */
 .question {
     font-family: 'Oswald', sans-serif;
     font-size: 35px;
@@ -99,7 +101,7 @@ body {
 }
 
 
-/* OPTIONS/CHOICES START */
+/* --- OPTIONS/CHOICES DESIGN START --- */
 .option {
     font-family: 'Oswald', sans-serif;
     border-radius: 20px;
@@ -157,7 +159,7 @@ button:active {
 .choiceD:hover {
     background-color: rgb(0, 42, 180);
 }
-/* OPTIONS/CHOICES END */
+/* --- OPTIONS/CHOICES DESIGN END --- */
 
 .credits {
     color: white;
