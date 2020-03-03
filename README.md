@@ -1,5 +1,5 @@
 ## Quiz-About-Me
-Live Link:  [Click me!](https://jayptucker.github.io/quiz-about-me/){:target="_blank"}
+Live Link:  [Click me!](https://jayptucker.github.io/quiz-about-me/)
 
 Github Link: [Click me!](https://github.com/JayPTucker/quiz-about-me)
 
