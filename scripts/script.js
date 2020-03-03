@@ -2,10 +2,6 @@ var currentQuestion = 0;
 var score = 0;
 var totQuestions = questions.length;
 
-// MAIN MENU START
-
-// MAIN MENU END
-
 var quizBox = document.getElementById('quiz');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
