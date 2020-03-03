@@ -19,7 +19,8 @@ var timerScore = document.getElementById('timerScore');
 var leaderboard = document.getElementById('leaderboard');
 var title = document.getElementById('quizTitle');
 
-const isStorage = 'undefined' !== typeof localStorage
+
+
 
 // QUIZ TIMER START
 var sec = 60;
@@ -36,10 +37,9 @@ function timer(){
         }
 
         // IF ALL QUESTIONS ARE COMPLETED:
-        if(currentQuestion == totQuestions){
+        if(currentQuestion == totQuestions) {
             clearInterval(timer);
             leaderboardScore();
-            clearInterval(timer);
             title.innerText = "Leaderboard"
         }
 
@@ -52,7 +52,7 @@ function timer(){
             document.getElementById('timer').style.color = "white";
         }
     }, 1000);
-}
+};
 
 timer();
 
@@ -65,19 +65,19 @@ function leaderboardScore() {
     localStorage.setItem("leaderboard", name + ' ' + JSON.stringify(score));
 
 
-    quiz.innerHTML = "";
-    quiz.innerHTML = "<h1 class='LBScore'>Score:<br> " + localStorage.getItem('leaderboard') + "</h1>";
+    quizBox.innerHTML = "";
+    quizBox.innerHTML = "<hr><h1 class='LBScore'>Score:<br> " + localStorage.getItem('leaderboard') + "</h1>";
 
-}
+};
 
 // LEADERBOARD BUTTON
 function loadLeaderboard() {
     clearInterval(timer);
-    quiz.innerHTML = "";
-    quiz.innerHTML = "<hr><h1 class='LBScore'>Score: " + localStorage.getItem('leaderboard') + "</h1>";
+    quizBox.innerHTML = "";
+    quizBox.innerHTML = "<hr><h1 class='LBScore'>Score:<br> " + localStorage.getItem('leaderboard') + "</h1>";
     clearInterval(timer);
-    title.innerText = "Leaderboard"
-}
+    title.innerText = "Leaderboard";
+};
 // LEADERBOARD FUNCTIONALITY START
 
 // QUIZ TIMER END
@@ -119,7 +119,6 @@ function loadNextQuestion () {
     if(currentQuestion == totQuestions - 1){
         nextButton.textContent = 'Finish';
     }
-
     loadQuestion(currentQuestion);
 }
 

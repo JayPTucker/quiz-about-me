@@ -12,7 +12,7 @@ body {
     box-shadow: 1px 1px 20px rgba(57, 144, 226, 0.603);
     box-shadow: inset 0px 0px 10px black;
     margin-bottom: 35px;
-    text-shadow: 1px 2px 3px black;
+    text-shadow: 1px 2px 1px black;
 }
 
 /* LOGO DESIGN */
@@ -35,6 +35,12 @@ body {
 .goHomeBtn {
     margin: 0px;
     padding: 0px;
+}
+
+.desc {
+    margin: 0px 80px;
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
 }
 
 /* BUTTON DESIGN START */
