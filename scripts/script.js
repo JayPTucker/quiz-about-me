@@ -62,9 +62,7 @@ function leaderboardScore() {
     // Getting the Player's name:
     var name = prompt("You Finished!  What's your name?");
 
-
     localStorage.setItem("leaderboard", name + ' ' + JSON.stringify(score));
-
 
     quizBox.innerHTML = "";
     quizBox.innerHTML = "<hr><h1 class='LBScore'>Score:<br> " + localStorage.getItem('leaderboard') + "</h1>";
@@ -101,13 +99,6 @@ function loadNextQuestion () {
         return;
     }
 
-    // Next Question
-    selectedOption.checked = false;
-    currentQuestion++;
-    if(currentQuestion == totQuestions - 1){
-        nextButton.textContent = 'Finish';
-    }
-
     // Score/Timer Calculator
     var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
@@ -119,9 +110,15 @@ function loadNextQuestion () {
         score -= 5;
         sec -= 20;
         timerScore.style.color = "red";
-        timerScore.innerHTML = "<p>Incorrect!  -15 from the Timer!</p>";
+        timerScore.innerHTML = "<p>Incorrect!  -20 from the Timer!</p>";
     }
 
+    // Next Question
+    selectedOption.checked = false;
+    currentQuestion++;
+    if(currentQuestion == totQuestions - 1){
+        nextButton.textContent = 'Finish';
+    }
     loadQuestion(currentQuestion);
 
 // --- LOADING THE QUESTIONS END ---
