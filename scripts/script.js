@@ -19,9 +19,6 @@ var timerScore = document.getElementById('timerScore');
 var leaderboard = document.getElementById('leaderboard');
 var title = document.getElementById('quizTitle');
 
-
-
-
 // QUIZ TIMER START
 var sec = 60;
 
@@ -123,3 +120,4 @@ function loadNextQuestion () {
 }
 
 loadQuestion(currentQuestion);
+
