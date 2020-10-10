@@ -3,7 +3,7 @@ Live Link:  [Click me!](https://jayptucker.github.io/quiz-about-me/)
 
 Github Link: [Click me!](https://github.com/JayPTucker/quiz-about-me)
 
-My Website:  [Click me!](https://jayptucker.github.io/)
+My Website:  [Click me!](https://www.jayptucker.com/)
 
 ## Description:
 UPDATED (3/3/2020):
